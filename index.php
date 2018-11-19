@@ -10,10 +10,16 @@
 <?php
 include "header.html";
 ?>
+    <div class="homePageBanner">
+        <img class="homePagePicture" src="pictures/eliteGames.jpg">
+        <div class="title">
+            <h1>Welcome to elite games!</h1>
+            <h2>For all the elite buyers.</h2>
+        </div>
+    </div>
+<div class="gameCategoriesContainer">
 
-<img class="homePagePicture" src="pictures/eliteGames.jpg">
-<h1>Welcome to elite games</h1>
-<h2>For all the elite buyers</h2>
+</div>
 <?php
 include "footer.html"
 ?>
