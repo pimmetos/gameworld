@@ -62,10 +62,10 @@ body {
     width: 75%;
     overflow: hidden;
     border-radius: 5px 5px 0 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    /*position: fixed;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
     text-align: center;
     margin: 0 auto;
 }
@@ -94,13 +94,42 @@ body {
     left: 20px;
 
 }
-.homePageContainer{
-    /*display: inline-block;*/
-    /*position: relative;*/
-}
-.homePageBanner{
+
+.homePageBanner {
     position: relative;
     margin: 0 auto;
     width: 50%;
 
+}
+
+.gameCategoriesContainer {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.gameCategory {
+    display: inline-block;
+    margin-left: 150px;
+    margin-top: 5px;
+}
+#steam{
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.wrapper {
+    min-height: calc(100vh - 160px);
+}
+.gameContainer{
+    display: inline-block;
+    background-color: lightgray;
+    margin-right: 20px;
+}
+.gameName{
+    color: orange;
+}
+.gameImage{
+    height: 350px;
+    width: 300px;
 }
