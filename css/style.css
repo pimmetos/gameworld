@@ -62,10 +62,6 @@ body {
     width: 75%;
     overflow: hidden;
     border-radius: 5px 5px 0 0;
-    /*position: fixed;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
     text-align: center;
     margin: 0 auto;
 }
@@ -110,26 +106,38 @@ body {
 
 .gameCategory {
     display: inline-block;
-    margin-left: 150px;
+    padding: 0 100px;
     margin-top: 5px;
-}
-#steam{
-    margin-right: -8px;
-    margin-left: -8px;
 }
 
 .wrapper {
     min-height: calc(100vh - 160px);
 }
-.gameContainer{
+
+.gameContainer {
     display: inline-block;
     background-color: lightgray;
     margin-right: 20px;
 }
-.gameName{
-    color: orange;
+
+.gameName {
+    color: #281947;
 }
-.gameImage{
+
+.gameImage {
     height: 350px;
     width: 300px;
+}
+
+.gameListContainer {
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.categoryImage {
+    width: 200px;
+    height: 200px;
+    border: 0;
+    border-radius: 100%;
 }

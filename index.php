@@ -18,29 +18,47 @@ include "header.html";
             <h2>For all the elite buyers.</h2>
         </div>
     </div>
-    <div class="gameCategoriesContainer">
-        <div class="gameCategory" id="steam">
-            <a href="index.php">
-                <img src="pictures/logoSteam.png" alt="HTML tutorial"
-                     style="width:200px;height:200px;border:0;border-radius:100%">
-            </a>
-        </div>
-        <div class="gameCategory" id="playstation">
-            <a href="index.php">
-                <img src="pictures/logoPlaystation.png" alt="HTML tutorial"
-                     style="width:200px;height:200px;border:0;border-radius:100%">
-            </a>
-        </div>
-        <div class="gameCategory" id="xBox">
-            <a href="index.php">
-                <img src="pictures/logoXBox.svg" alt="HTML tutorial"
-                     style="width:200px;height:200px;border:0;border-radius:100%;">
-            </a>
-        </div>
-    </div>
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "gameworld";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM gamecategory";
+    $result = $conn->query($sql);
+    echo "<div class='gameCategoriesContainer'>";
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='gameCategory'>";
+            echo "<a href='games.php?gamePlatform=" . $row["id"] . "'>";
+            echo "<img class='categoryImage' src='pictures/" . $row["categoryImage"] . "'>" . "<br>";
+            echo "</a>";
+            echo "</div>";
+        }
+    } else {
+        echo "0 results";
+    }
+    echo "</div>";
+    $conn->close();
+    ?>
 </div>
 <?php
 include "footer.html"
 ?>
+
+
+
+
+
+
+
 </body>
 </html>

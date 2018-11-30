@@ -24,24 +24,28 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT * FROM games";
+if (isset($_GET["gamePlatform"])){
+    $sql = "SELECT * FROM games WHERE gamePlatform = " . $_GET["gamePlatform"];
+}
 $result = $conn->query($sql);
-
+echo "<div class='gameListContainer'>";
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
         echo "<div class='gameContainer'>";
+        echo "<img class='gameImage' src='pictures/" . $row["gameImage"] . "'>" . "<br>";
         echo "<div class='gameName'>";
         echo $row["gameName"] . "<br>";
         echo "</div>";
         echo "<div class='gamePrice'>";
-        echo $row["gamePrice"] . "<br>";
+        echo "€".$row["gamePrice"] . "<br>";
         echo "</div>";
-        echo "<img class='gameImage' src='pictures/". $row["gameImage"] ."'>". "<br>";
         echo "</div>";
     }
 } else {
     echo "0 results";
 }
+echo "</div>";
 $conn->close();
 ?>
 <?php
