@@ -23,7 +23,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM games natural join gameCategory";
+$sql = "SELECT * FROM games";
 if (isset($_GET["gamePlatform"])) {
     $sql = "SELECT * FROM games WHERE gamePlatform = " . $_GET["gamePlatform"];
 }
