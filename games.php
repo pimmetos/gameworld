@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php
-include "header.html";
+include "header.php";
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -23,8 +23,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM games";
-if (isset($_GET["gamePlatform"])){
+$sql = "SELECT * FROM games natural join gameCategory";
+if (isset($_GET["gamePlatform"])) {
     $sql = "SELECT * FROM games WHERE gamePlatform = " . $_GET["gamePlatform"];
 }
 $result = $conn->query($sql);
@@ -33,12 +33,15 @@ if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
         echo "<div class='gameContainer'>";
-        echo "<img class='gameImage' src='pictures/" . $row["gameImage"] . "'>" . "<br>";
+        echo "<img class='gameImage' src='pictures/" . $row["gameImage"] . "'>";
         echo "<div class='gameName'>";
-        echo $row["gameName"] . "<br>";
+        echo $row["gameName"];
         echo "</div>";
         echo "<div class='gamePrice'>";
-        echo "€".$row["gamePrice"] . "<br>";
+        echo "€" . $row["gamePrice"];
+        echo "</div>";
+        echo "<div class='orderButton orderCategoryColor".$row["gamePlatform"] ."'>";
+        echo "<a href='#'>Order</a>";
         echo "</div>";
         echo "</div>";
     }

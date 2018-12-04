@@ -31,12 +31,12 @@ body {
 }
 
 #logo a:hover {
-transform: scale(1.01);
+    transform: scale(1.01);
 }
 
 #mainNav {
     float: right;
-    margin-right: 70px;
+    margin-right: 50px;
 }
 
 #mainNav ul {
@@ -45,14 +45,18 @@ transform: scale(1.01);
 
 #mainNav li {
     display: inline;
+    float: left;
 }
 
 #mainNav li a {
-    display: inline-block;
     padding: 15px;
-    color: white;
+    color: black;
     text-decoration: none;
     margin-top: 9px;
+}
+
+#mainNav li a:hover {
+    color: white;
 }
 
 .headerLines:hover {
@@ -61,7 +65,7 @@ transform: scale(1.01);
     border-radius: 5px;
 }
 
-#basket:hover {
+#basketIcon:hover {
     transform: scale(1.1);
 }
 
@@ -130,7 +134,7 @@ transform: scale(1.01);
 .gameContainer {
     display: inline-block;
     background-color: lightgray;
-    margin-right: 20px;
+    margin: 10px;
 }
 
 .gameName {
@@ -153,4 +157,50 @@ transform: scale(1.01);
     height: 200px;
     border: 0;
     border-radius: 100%;
+}
+
+li a, .dropLink {
+    display: inline-block;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #E9EDF6;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdownContent a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+
+.dropdownContent a:hover {
+    background-color: black;
+    border-radius: 3px;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.orderCategoryColor1 {
+    background-color: #071937;
+}
+
+.orderCategoryColor2 {
+    background-color: blue;
+}
+
+.orderCategoryColor3 {
+    background-color: green;
+}
+
+.orderButton a {
+    color: white;
+    text-decoration: none;
 }

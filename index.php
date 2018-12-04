@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-include "header.html";
+include "header.php";
 ?>
 <div class="wrapper">
     <div class="homePageBanner">
