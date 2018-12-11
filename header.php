@@ -35,7 +35,7 @@
         </li>
         <li><a class="headerLines" href="">About us</a></li>
         <li><a class="headerLines" href="">Contact</a></li>
-        <li><a id="basket" href=""><img id="basketIcon" src="pictures/shoppingCart.png" alt="Basket" style="height: 30px; width: 30px; position: absolute;top: 29px;"> </a></li>
+        <li><a id="basket" href="basket.php"><img id="basketIcon" src="pictures/shoppingCart.png" alt="Basket" style="height: 30px; width: 30px; position: absolute;top: 29px;"> </a></li>
         </ul>
     </nav>
 </header>

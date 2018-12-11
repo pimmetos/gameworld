@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <meta name="description" content="Elite games. - Enjoy The Greatest Hits">
+    <meta name="description" content="Elite games. - Enjoy The Greatest Games">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Radio Gaga</title>
+    <title>Game World</title>
 </head>
 <body>
 <?php

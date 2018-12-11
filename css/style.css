@@ -204,3 +204,15 @@ li a, .dropLink {
     color: white;
     text-decoration: none;
 }
+
+#basketList {
+    margin: 30px auto;
+    background-color: rgba(105, 105, 105, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    width: 65%;
+}
+
+.tableHeaderItems {
+    text-align: left;
+}
