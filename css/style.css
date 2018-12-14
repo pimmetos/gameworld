@@ -150,6 +150,7 @@ a {
 .gameImage {
     height: 350px;
     width: 300px;
+    border-radius: 5px;
 }
 
 .gameListContainer {
@@ -268,5 +269,49 @@ li a, .dropLink {
     width: 100%;
     height: auto;
     border-radius: 5px;
+
+}
+
+
+
+
+.containerContactForm input[type=text], select, textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: 1px solid #a5a5a5;
+    resize: vertical;
+    margin-top: 3px;
+    margin-bottom: 20px;
+    min-height: 50px;
+
+}
+
+.containerContactForm input[type=submit] {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 11px 19px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.containerContactForm input[type=submit]:hover {
+    background-color: white;
+    color: black;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+.containerContactForm {
+    border-radius: 10px;
+    background-color: #dfdfdf;
+    padding: 20px;
+    width: 50%;
+    margin: 20px auto;
 
 }
