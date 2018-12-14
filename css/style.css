@@ -4,8 +4,14 @@ body {
     background-size: cover;
     margin: 0;
     background-repeat: no-repeat;
-    font-family: Arial;
+    font-family: -apple-system;
+    font-size: 20px;
 
+}
+
+a {
+
+    text-decoration: none;
 }
 
 #header {
@@ -24,7 +30,6 @@ body {
     font-size: 37px;
     text-transform: uppercase;
     float: left;
-    text-decoration: none;
     display: inline-block;
     margin-top: 12px;
     margin-left: 100px;
@@ -51,7 +56,6 @@ body {
 #mainNav li a {
     padding: 15px;
     color: black;
-    text-decoration: none;
     margin-top: 9px;
 }
 
@@ -135,9 +139,11 @@ body {
     display: inline-block;
     background-color: lightgray;
     margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.gameName {
+.gameNamePriceContainer {
     color: #281947;
 }
 
@@ -150,6 +156,22 @@ body {
     width: 75%;
     text-align: center;
     margin: 0 auto;
+}
+
+.orderButton {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+
+}
+.orderButtonLink div:hover {
+    background-color: white;
+    color: black;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
 }
 
 .categoryImage {
@@ -200,19 +222,51 @@ li a, .dropLink {
     background-color: green;
 }
 
-.orderButton a {
+.orderButton {
     color: white;
-    text-decoration: none;
 }
 
 #basketList {
     margin: 30px auto;
-    background-color: rgba(105, 105, 105, 0.5);
+    background-color: rgba(105, 105, 105, 0.7);
     padding: 20px;
     border-radius: 10px;
     width: 65%;
+    color: white;
+}
+#basketList th {
+    color: black;
+    font-size: 30px;
+    text-align: left;
 }
 
-.tableHeaderItems {
-    text-align: left;
+.tableFooter{
+    font-size: 30px;
+
+}
+
+.checkoutGameImage {
+    width: 150px;
+    height: 200px;
+    border-radius: 3px;
+}
+
+#aboutUsContainer {
+    width: 40%;
+    margin: 20px auto;
+
+}
+
+#aboutUsTextContainer {
+    background-color: rgba(80, 105, 150, 0.95);
+    border-radius: 20px;
+    padding: 1px 10px;
+    color: white;
+}
+
+#aboutUsPicture {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+
 }

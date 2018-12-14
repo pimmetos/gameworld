@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-include "header.php";
+include "./php/header.php";
 ?>
 <div class="wrapper">
     <div class="homePageBanner">
@@ -19,17 +19,7 @@ include "header.php";
         </div>
     </div>
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "gameworld";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include "./php/databaseConnection.php";
 
     $sql = "SELECT * FROM gamecategory";
     $result = $conn->query($sql);
@@ -48,17 +38,10 @@ include "header.php";
     }
     echo "</div>";
     $conn->close();
+
+    echo "</div>";
+    include "footer.html"
     ?>
-</div>
-<?php
-include "footer.html"
-?>
-
-
-
-
-
-
 
 </body>
 </html>

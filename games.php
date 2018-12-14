@@ -10,19 +10,8 @@
 </head>
 <body>
 <?php
-include "header.php";
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gameworld";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include "./php/header.php";
+include "./php/databaseConnection.php";
 $sql = "SELECT * FROM games";
 if (isset($_GET["gamePlatform"])) {
     $sql = "SELECT * FROM games WHERE gamePlatform = " . $_GET["gamePlatform"];
@@ -34,14 +23,16 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<div class='gameContainer'>";
         echo "<img class='gameImage' src='pictures/" . $row["gameImage"] . "'>";
+        echo "<div class='gameNamePriceContainer'>";
         echo "<div class='gameName'>";
         echo $row["gameName"];
         echo "</div>";
         echo "<div class='gamePrice'>";
         echo "€" . $row["gamePrice"];
         echo "</div>";
-        echo "<div class='orderButton orderCategoryColor".$row["gamePlatform"] ."'>";
-        echo "<a href='#'>Order</a>";
+//        echo "<div class='orderButton orderCategoryColor" . $row["gamePlatform"] . "'>";
+        echo "<a class='orderButtonLink' href='php/addToBasket.php?gameId=" . $row["gameId"] . "'><div class='orderButton orderCategoryColor" . $row["gamePlatform"] . "'>Order</div></a>";
+//        echo "</div>";
         echo "</div>";
         echo "</div>";
     }

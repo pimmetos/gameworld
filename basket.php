@@ -10,28 +10,57 @@
 </head>
 <body>
 <?php
-include "header.php";
-?>
-<div class="wrapper">
-    <table id="basketList">
-        <tr>
-            <th class="tableHeaderItems">Image</th>
-            <th class="tableHeaderItems">Product</th>
-            <th class="tableHeaderItems">Price</th>
-            <th class="tableHeaderItems">Quantity</th>
-            <th class="tableHeaderItems">subtotal</th>
-            <th></th>
-        </tr>
-        <tr>
-            <td><img src="pictures/minecraft.jpg" alt="" width="125" height="145" ></td>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-        </tr>
-    </table>
-</div>
-<?php
-include "footer.html";
+$totalPrice = 0;
+include "./php/header.php";
+session_start();
+include "./php/databaseConnection.php";
+if (isset($_SESSION["basket"])) {
+
+    ?>
+    <div class="wrapper">
+        <table id="basketList">
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+            <?php
+            $getString = implode(",", array_keys($_SESSION["basket"]));
+            $sql = "SELECT * FROM games WHERE gameId in(" . $getString . ")";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td><img class='checkoutGameImage' src='pictures/" . $row["gameImage"] . "'></td>";
+                    echo "<td>" . $row["gameName"] . "</td>";
+                    echo "<td>€" . $row["gamePrice"] . "</td>";
+                    echo "<td>1</td>";
+                    echo "<td>€" . $row["gamePrice"] . "</td>";
+                    echo "</tr>";
+                    $totalPrice = $totalPrice + $row["gamePrice"];
+                }
+                echo "<tr class='tableFooter'>";
+                echo "<td>Total</td>";
+                echo "<td></td>";
+                echo "<td></td>";
+                echo "<td></td>";
+                echo "<td>€" . $totalPrice . "</td>";
+                echo "</tr>";
+            } else {
+                echo "<h1>  </h1>";
+            }
+            ?>
+        </table>
+    </div>
+    <?php
+    include "footer.html";
+} else {
+    echo "test";
+}
 ?>
 </body>
 </html>
