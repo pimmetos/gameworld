@@ -227,7 +227,7 @@ li a, .dropLink {
     color: white;
 }
 
-#basketList {
+.basketList {
     margin: 30px auto;
     background-color: rgba(105, 105, 105, 0.7);
     padding: 20px;
@@ -235,7 +235,7 @@ li a, .dropLink {
     width: 65%;
     color: white;
 }
-#basketList th {
+.basketList th {
     color: black;
     font-size: 30px;
     text-align: left;
@@ -314,4 +314,8 @@ li a, .dropLink {
     width: 50%;
     margin: 20px auto;
 
+}
+
+#noItemsSelected h1{
+text-align: center;
 }
